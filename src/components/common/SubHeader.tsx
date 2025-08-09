@@ -5,7 +5,7 @@ import UserImg from "@/assets/user.png";
 const SubHeader = () => {
   return (
     <div className="">
-      <header className="w-full bg-white border-b-2 border-gray-200">
+      <header className="w-full bg-white border-b-2 border-gray-200 py-3">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-12 text-sm text-gray-700">
             <div className="flex gap-6">
@@ -33,10 +33,38 @@ const SubHeader = () => {
 
             {/* User Profile */}
             <div className="flex items-center gap-2">
-              <div className="">
-                <Image src={UserImg} alt="user" width={500} height={500} className="w-[40px] h-[40px]" />
+              <div>
+                <div className="flex items-center gap-2 border border-primary text-primary px-2 py-2 rounded-lg">
+                  <div className="">
+                    <Image
+                      src={UserImg}
+                      alt="user"
+                      width={500}
+                      height={500}
+                      className="w-[22px] h-[22px]"
+                    />
+                  </div>
+                  <span className="hidden sm:inline text-base">
+                    Martin Luther
+                  </span>
+                </div>
               </div>
-              <span className="hidden sm:inline text-base">Martin Luther</span>
+              <div>
+                <div className="flex items-center gap-2 border border-primary text-primary px-2 py-2 rounded-lg">
+                  <div className="">
+                    <Image
+                      src={UserImg}
+                      alt="user"
+                      width={500}
+                      height={500}
+                      className="w-[22px] h-[22px]"
+                    />
+                  </div>
+                  <span className="hidden sm:inline text-base">
+                    Martin Luther
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>

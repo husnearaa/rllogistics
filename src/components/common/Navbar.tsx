@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "@/assets/logo.png";
 import China from "@/assets/icons/china.png";
+import { Globe } from "lucide-react";
 
 type FlagProps = { className?: string };
 
@@ -32,8 +33,8 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const languages: Language[] = [
-    {  name: "Suomi", icon: <ChinaFlag className="mr-2" /> },
-    {  name: "English", icon: <ChinaFlag className="mr-2" /> },
+    { name: "Chinese", icon: <ChinaFlag className="mr-2" /> },
+    { name: "Chinese", icon: <ChinaFlag className="mr-2" /> },
   ];
 
   const currentLangData = languages.find(
@@ -94,10 +95,11 @@ export default function Navbar() {
           </div>
         </div>
 
+        {/* Desktop Buttons */}
         <div className="hidden lg:flex items-center gap-6">
           <div className="flex gap-3">
             <div className="flex gap-2">
-              <div className="hidden lg:flex items-center space-x-6">
+              <div className="hidden lg:flex items-center space-x-6 border-primary border rounded-lg">
                 {/* Language Selector */}
                 <div className="relative">
                   <button
@@ -108,12 +110,12 @@ export default function Navbar() {
                   >
                     <div className="flex items-center space-x-2">
                       {currentLangData?.icon}
-                      <span>{currentLanguage}</span>
+                      <span><Globe className="text-primary" /></span>
                     </div>
                     <FaChevronDown
                       className={`transition-transform ${
                         isLanguageOpen ? "rotate-180" : ""
-                      }`}
+                      } text-primary`}
                     />
                   </button>
                   {isLanguageOpen && (
@@ -164,21 +166,21 @@ export default function Navbar() {
               </button>
             </Link>
           </div>
+        </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
-            <button
-              onClick={toggleSidebar}
-              className="text-primary focus:outline-none"
-            >
-              <FaBars size={24} />
-            </button>
-          </div>
+        {/* Mobile Menu Button - Moved outside of desktop buttons div */}
+        <div className="lg:hidden">
+          <button
+            onClick={toggleSidebar}
+            className="text-primary focus:outline-none"
+          >
+            <FaBars size={24} />
+          </button>
         </div>
 
         {/* Mobile Sidebar */}
         <div
-          className={`fixed top-0 left-0 w-full bg-background z-50 shadow-lg transform transition-transform duration-300 ease-in-out ${
+          className={`fixed top-0 left-0 w-full h-full bg-white z-50 shadow-lg transform transition-transform duration-300 ease-in-out ${
             isSidebarOpen ? "translate-x-0" : "-translate-x-full"
           }`}
         >
@@ -188,26 +190,27 @@ export default function Navbar() {
                 <Image
                   src={logo}
                   alt="rllogistics"
-                  width={40}
-                  height={40}
+                  width={194}
+                  height={36}
+                  className="w-[194px] h-[36px]"
                 />
               </div>
               <button
                 onClick={toggleSidebar}
-                className="text-white focus:outline-none"
+                className="text-black focus:outline-none"
               >
                 <FaTimes size={24} />
               </button>
             </div>
 
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-4 mt-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={`${
                     pathname === link.href ? "text-primary" : "text-black"
-                  } hover:text-primary py-2 border-b border-gray-700`}
+                  } hover:text-primary py-2 border-b border-gray-200 text-lg`}
                   onClick={() => setIsSidebarOpen(false)}
                 >
                   {link.label}
@@ -218,7 +221,12 @@ export default function Navbar() {
         </div>
 
         {/* Overlay for sidebar */}
-        {isSidebarOpen && <div className="fixed" onClick={toggleSidebar}></div>}
+        {isSidebarOpen && (
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-50 z-40" 
+            onClick={toggleSidebar}
+          ></div>
+        )}
       </div>
     </nav>
   );

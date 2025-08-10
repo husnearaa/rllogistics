@@ -56,8 +56,8 @@ export default function Banner() {
           </div>
 
           {/* Right Section - Transport Cards */}
-          <div className="lg:w-3/5 pl-8">
-            <div className="flex justify-end gap-6  flex-col lg:flex-row">
+          <div className="lg:w-3/5 lg:pl-8">
+            <div className="flex justify-end gap-6 flex-col lg:flex-row">
               {transportData.map((transport) => (
                 <div
                   key={transport.id}
@@ -66,7 +66,7 @@ export default function Banner() {
                   <Image
                     src={transport.image}
                     alt={transport.title}
-                    fill
+                    priority
                     className="object-cover rounded-lg lg:w-[240px] lg:h-[360px] w-full h-auto"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">

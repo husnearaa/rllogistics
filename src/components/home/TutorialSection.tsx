@@ -26,10 +26,10 @@ export default function TutorialSection() {
     <div className="container mx-auto py-16">
       <div className="">
         <div className="flex items-center gap-3 mb-4 lg:mb-0">
-          <span className="text-red-500 font-semibold text-sm tracking-wide uppercase">
+          <span className="text-red-500 font-semibold text-[20px] tracking-wide uppercase">
             EXPLORE TUTORIAL
           </span>
-          <div className="w-16 h-[2px] bg-red-500"></div>
+          <div className="w-10 h-[2px] bg-red-500"></div>
         </div>
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}

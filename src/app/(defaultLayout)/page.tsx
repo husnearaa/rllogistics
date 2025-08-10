@@ -4,6 +4,7 @@ import DeliverySystemSection from "@/components/home/DeliverySystemSection";
 import ExtraSection from "@/components/home/ExtraSection";
 import ProjectsSection from "@/components/home/ProjectsSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
+import TransportCategorySection from "@/components/home/TransportCategorySection";
 import TutorialSection from "@/components/home/TutorialSection";
 
 const HomePage = () => {
@@ -12,6 +13,7 @@ const HomePage = () => {
       <Banner />
       <TutorialSection />
       <DeliverySystemSection />
+      <TransportCategorySection />
       <ProjectsSection />
       <ChooseUsSection />
       <TestimonialsSection />

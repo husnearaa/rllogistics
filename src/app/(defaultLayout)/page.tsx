@@ -2,6 +2,7 @@ import Banner from "@/components/home/BannerSection";
 import ChooseUsSection from "@/components/home/ChooseUsSection";
 import DeliverySystemSection from "@/components/home/DeliverySystemSection";
 import ExtraSection from "@/components/home/ExtraSection";
+import ProjectsSection from "@/components/home/ProjectsSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import TutorialSection from "@/components/home/TutorialSection";
 
@@ -11,6 +12,7 @@ const HomePage = () => {
       <Banner />
       <TutorialSection />
       <DeliverySystemSection />
+      <ProjectsSection />
       <ChooseUsSection />
       <TestimonialsSection />
       <ExtraSection />

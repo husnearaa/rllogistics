@@ -63,7 +63,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-20 left-0 w-full z-50 bg-white text-black py-4">
+    <nav className="top-20 left-0 w-full z-50 bg-white text-black py-4">
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex gap-12">
           {/* Logo */}

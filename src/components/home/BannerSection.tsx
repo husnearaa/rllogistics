@@ -27,10 +27,10 @@ const transportData = [
   },
 ];
 
-export default function Banner() {
+export default function BannerSection() {
   return (
     <div className="bg-gray-50 px-6 md:py-14 py-8">
-      <div className="container mx-auto">
+      <div className="lg:container lg:mx-auto">
         <div className="flex justify-center items-center flex-col lg:flex-row gap-12 lg:gap-0">
           {/* Left Section - Hero Content */}
           <div className="lg:w-2/5 py-8">
@@ -51,7 +51,7 @@ export default function Banner() {
                   placeholder="Enter your booking number..."
                   className="flex-1 h-12 border-gray-300 py-3 lg:py-0"
                 />
-                <Button className="bg-red-500 hover:bg-red-600 text-white px-6 h-12">
+                <Button className="bg-red-500 hover:bg-transparent border border-primary hover:border hover:border-primary hover:text-primary text-white px-6 h-12">
                   Track Order
                 </Button>
               </div>

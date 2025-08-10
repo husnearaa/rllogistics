@@ -6,8 +6,8 @@ import { IoLogoWechat } from "react-icons/io5";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-6 py-12">
+    <footer className="bg-black text-white">
+      <div className="container mx-auto py-12">
         <div className="flex justify-center items-center flex-col lg:flex-row gap-6">
           {/* About Company Section */}
           <div className="lg:w-2/5">

@@ -34,7 +34,7 @@ export default function TutorialSection() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <h1 className="text-3xl md:text-[60px] font-bold text-gray-900 leading-tight max-w-[660px]">
+            <h1 className="text-3xl md:text-[35px] lg:text-[60px] font-bold text-gray-900 leading-tight max-w-[660px]">
               Check out our tutorial to book our services
             </h1>
 

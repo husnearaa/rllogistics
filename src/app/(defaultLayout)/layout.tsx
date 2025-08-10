@@ -1,3 +1,4 @@
+import Footer from "@/components/common/Footer";
 import Navbar from "@/components/common/Navbar";
 import SubHeader from "@/components/common/SubHeader";
 
@@ -7,6 +8,7 @@ const CommonLayout = ({ children }: { children: React.ReactNode }) => {
     <SubHeader />
     <Navbar />
       <main>{children}</main>
+      <Footer />
     </>
   );
 };

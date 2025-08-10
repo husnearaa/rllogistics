@@ -29,22 +29,22 @@ const transportData = [
 
 export default function Banner() {
   return (
-    <div className="bg-gray-50 p-8">
+    <div className="bg-gray-50 px-8 py-14">
       <div className="container mx-auto">
-        <div className="flex justify-center item-center">
+        <div className="flex justify-center items-center flex-col lg:flex-row gap-12 lg:gap-0">
           {/* Left Section - Hero Content */}
-          <div className="space-y-8 w-2/5 border border-green-500">
+          <div className="space-y-8 lg:w-2/5">
             <div className="space-y-4">
-              <h1 className="text-6xl font-bold text-black">Fast and Safe</h1>
-              <h1 className="text-6xl font-bold text-red-500">Transport</h1>
+              <h1 className="lg:text-6xl text-lg font-bold text-black">Fast and Safe</h1>
+              <h1 className="lg:text-6xl text-lg font-bold text-red-500">Transport</h1>
             </div>
 
-            <p className="text-gray-700 text-lg leading-relaxed max-w-md">
+            <p className="text-gray-700 lg:text-lg text-base leading-relaxed lg:max-w-md">
               Reliable logistics and transport solutions ensuring timely
               delivery, cost-efficiency, and seamless supply chain management.
             </p>
 
-            <div className="flex gap-4 max-w-md">
+            <div className="flex gap-4 lg:max-w-md flex-col lg:flex-row">
               <Input
                 placeholder="Enter your booking number..."
                 className="flex-1 h-12 border-gray-300"
@@ -56,23 +56,22 @@ export default function Banner() {
           </div>
 
           {/* Right Section - Transport Cards */}
-          <div className="w-3/5 border border-red-500">
-            <div className="flex justify-end gap-3">
+          <div className="lg:w-3/5 pl-8">
+            <div className="flex justify-end gap-6  flex-col lg:flex-row">
               {transportData.map((transport) => (
                 <div
                   key={transport.id}
-                  className="relative overflow-hidden rounded-lg aspect-square"
+                  className="relative overflow-hidden"
                 >
                   <Image
-                    src={transport.image.src}
-                    alt="Air Transport"
-                    width={500}
-                    height={500}
-                    className="w-[240px] h-[360px] object-cover"
+                    src={transport.image}
+                    alt={transport.title}
+                    fill
+                    className="object-cover rounded-lg lg:w-[240px] lg:h-[360px] w-full h-auto"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col justify-end p-6">
                     <h3 className="text-white text-xl font-semibold mb-2">
-                     {transport.title}
+                      {transport.title}
                     </h3>
                     <div className="flex items-center text-white text-sm">
                       <MapPin className="w-4 h-4 mr-1" />

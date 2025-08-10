@@ -34,11 +34,11 @@ export default function DeliverySystemSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex justify-center items-center gap-3 mb-4 lg:mb-0">
-            <div className="w-10 h-[2px] bg-red-500"></div>
-            <span className="text-red-500 font-semibold text-[20px] tracking-wide uppercase">
+            <div className="w-10 h-[2px] bg-primary"></div>
+            <span className="text-primary font-semibold text-[20px] tracking-wide uppercase">
               How it works
             </span>
-            <div className="w-10 h-[2px] bg-red-500"></div>
+            <div className="w-10 h-[2px] bg-primary"></div>
           </div>
           <h2 className="text-3xl md:text-[35px] lg:text-[60px] font-bold text-gray-900 leading-tight">
             How we deliver your

@@ -4,20 +4,20 @@ import TransportImg2 from "@/assets/image/Transport-2.png";
 
 export default function TransportCategorySection() {
   return (
-    <section className="container mx-auto px-4 py-8 md:py-12 lg:py-16">
-      <div className="flex items-center gap-14">
+    <section className="container mx-auto px-16 py-8 md:py-12 lg:py-16">
+      <div className="flex items-center flex-col lg:flex-row lg:gap-16 gap-6">
         {/* Left Column - Image */}
-        <div className="md:w-2/5 order-2 lg:order-1  border border-amber-700">
+        <div className="md:w-1/3 order-2 lg:order-1  border border-amber-700">
           <Image
             src={TransportImg1}
             width={600}
             height={400}
             alt="People unloading boxes from a moving truck"
-            className="rounded-lg object-cover w-full h-auto lg:w-[427px] lg:h-[250px]"
+            className="rounded-lg object-cover w-full h-auto lg:w-[450px] lg:h-[250px]"
           />
         </div>
         {/* Right Column - Text Content */}
-        <div className="md:w-3/5 order-1 lg:order-2 space-y-4  border border-amber-700">
+        <div className="md:w-2/3 order-1 lg:order-2 space-y-4  border border-amber-700 px-8">
           <p className="text-red-500 font-semibold text-sm uppercase tracking-wider">
             WE SPECIALISE IN THE TRANSPORTATION
             <span className="ml-2 inline-block w-8 h-0.5 bg-red-500 align-middle"></span>

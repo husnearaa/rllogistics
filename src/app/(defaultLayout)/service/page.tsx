@@ -1,19 +1,21 @@
-import TransportationServices from '@/components/pages/service/TransportationServices';
-import { PageHeader } from '@/components/shared/PageHeader';
-import React from 'react';
+import WorkProcessSection from "@/components/home/WorkProcessSection";
+import TransportationServices from "@/components/pages/service/TransportationServices";
+import { PageHeader } from "@/components/shared/PageHeader";
+import React from "react";
 
 const ServicePage = () => {
-    return (
+  return (
     <div>
       <PageHeader
-        title="About Us"
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "About us" }]}
+        title="Our Services"
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Our Services" }]}
       />
       <main className="container mx-auto py-8 px-4">
         <TransportationServices />
-               </main>   
-        </div>
-    );
+        <WorkProcessSection />
+      </main>
+    </div>
+  );
 };
 
 export default ServicePage;

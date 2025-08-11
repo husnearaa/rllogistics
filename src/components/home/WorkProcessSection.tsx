@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function WorkProcessSection() {
   return (
-    <div className="min-h-screen bg-white py-20 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-16 px-4">
+      <div className="container mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <div className="flex justify-center items-center gap-3 mb-4 lg:mb-0">

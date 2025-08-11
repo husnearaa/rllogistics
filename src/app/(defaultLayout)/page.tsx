@@ -6,6 +6,7 @@ import ProjectsSection from "@/components/home/ProjectsSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import TransportCategorySection from "@/components/home/TransportCategorySection";
 import TutorialSection from "@/components/home/TutorialSection";
+import WorkProcessSection from "@/components/home/WorkProcessSection";
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <DeliverySystemSection />
       <TransportCategorySection />
       <ProjectsSection />
+      <WorkProcessSection />
       <ChooseUsSection />
       <TestimonialsSection />
       <ExtraSection />

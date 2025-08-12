@@ -1,4 +1,4 @@
-// import { Card, CardContent } from "@/components/ui/card";
+"use client";
 import { Calendar, MessageCircle } from "lucide-react";
 import Image from "next/image";
 import Img1 from "@/assets/image/b1.png";
@@ -7,6 +7,8 @@ import Img3 from "@/assets/image/b3.png";
 import Img4 from "@/assets/image/b4.png";
 import Img5 from "@/assets/image/b5.png";
 import { CgArrowLongRight } from "react-icons/cg";
+import { useState } from "react";
+import Pagination from "@/components/shared/CustomPagination";
 
 const blogPosts = [
   {
@@ -62,6 +64,7 @@ const blogPosts = [
 ];
 
 export default function BlogContent() {
+  const [currentPage, setCurrentPage] = useState(2);
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="container mx-auto px-4">
@@ -113,17 +116,12 @@ export default function BlogContent() {
         </div>
 
         {/* Pagination */}
-        <div className="flex justify-center items-center gap-6">
-          <button className="w-8 h-8 rounded-full text-gray-700 transition-colors">
-            1
-          </button>
-          <button className="w-10 h-10 rounded-full bg-red-100 border-red-300 border text-black">
-            2
-          </button>
-          <button className="w-8 h-8 rounded-full text-gray-700 transition-colors">
-            3
-          </button>
-        </div>
+
+        <Pagination
+          currentPage={currentPage}
+          totalPages={5}
+          onPageChange={(page) => setCurrentPage(page)}
+        />
       </div>
     </div>
   );

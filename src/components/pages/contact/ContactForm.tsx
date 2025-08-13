@@ -1,19 +1,18 @@
 import React from "react";
-import { useForm } from "react-hook-form"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { toast } from "sonner"
-import { Phone, Mail, MapPin } from "lucide-react"
+import { useForm } from "react-hook-form";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "sonner";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 interface FormData {
-  name: string
-  email: string
-  phone: string
-  subject: string
-  message: string
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
 }
-
 
 const ContactForm = () => {
   const {
@@ -47,14 +46,16 @@ const ContactForm = () => {
         {/* Left Section */}
         <div className="space-y-8">
           <div>
-            <div className="text-red-500 text-sm font-medium mb-2 flex items-center gap-2">
-              <div className="w-8 h-px bg-red-500"></div>
-              GET A QUOTE
+            <div className="flex items-center gap-3 mb-4 lg:mb-0">
+              <span className="text-red-500 font-semibold text-[20px] tracking-wide uppercase">
+                GET A QUOTE
+              </span>
+              <div className="w-10 h-[2px] bg-red-500"></div>
             </div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl lg:text-4xl font-bold leading-tight text-gray-900 mt-2">
               Get in touch and we&apos;ll help your business
-            </h1>
-            <p className="text-gray-600 leading-relaxed">
+            </h2>
+            <p className="text-gray-600 leading-relaxed mt-3">
               Transmax is the world&apos;s driving worldwide coordinations
               supplier we uphold industry and exchange the worldwide trade of
               cloud dummy merchandise through land transport.
@@ -64,8 +65,8 @@ const ContactForm = () => {
           <div className="space-y-4">
             {/* Call Us Card */}
             <div className="bg-red-50 border border-red-100 rounded-lg p-6 flex items-start gap-4">
-              <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                <Phone className="w-6 h-6 text-white" />
+              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+                <Phone className="w-6 h-6 text-white hover:scale-110 duration-300" />
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">
@@ -79,7 +80,7 @@ const ContactForm = () => {
             {/* Make A Quote Card */}
             <div className="bg-red-50 border border-red-100 rounded-lg p-6 flex items-start gap-4">
               <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                <Mail className="w-6 h-6 text-white" />
+                <Mail className="w-6 h-6 text-white hover:scale-110 duration-300" />
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">
@@ -93,7 +94,7 @@ const ContactForm = () => {
             {/* Service Station Card */}
             <div className="bg-red-50 border border-red-100 rounded-lg p-6 flex items-start gap-4">
               <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-6 h-6 text-white" />
+                <MapPin className="w-6 h-6 text-white hover:scale-110 duration-300" />
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">
@@ -110,11 +111,13 @@ const ContactForm = () => {
         {/* Right Section - Contact Form */}
         <div className="space-y-8">
           <div>
-            <div className="text-red-500 text-sm font-medium mb-2 flex items-center gap-2">
-              <div className="w-8 h-px bg-red-500"></div>
-              CONTACT FOR SERVICES
+            <div className="flex items-center gap-3 mb-4 lg:mb-0">
+              <span className="text-red-500 font-semibold text-[20px] tracking-wide uppercase">
+                CONTACT FOR SERVICES
+              </span>
+              <div className="w-10 h-[2px] bg-red-500"></div>
             </div>
-            <h2 className="text-4xl font-bold text-gray-900">
+            <h2 className="text-2xl lg:text-4xl font-bold leading-tight text-gray-900 mt-2">
               Feel free to write our logistics services experts
             </h2>
           </div>
@@ -126,10 +129,10 @@ const ContactForm = () => {
                 <Input
                   {...register("name", { required: "Name is required" })}
                   placeholder="Name*"
-                  className="h-12 border-gray-300 focus:border-red-500 focus:ring-red-500"
+                  className="h-12 border-gray-300 focus:border-b-primary"
                 />
                 {errors.name && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-primary text-sm mt-1">
                     {errors.name.message}
                   </p>
                 )}
@@ -145,10 +148,10 @@ const ContactForm = () => {
                   })}
                   type="email"
                   placeholder="Email*"
-                  className="h-12 border-gray-300 focus:border-red-500 focus:ring-red-500"
+                  className="h-12 border-gray-300 focus:border-b-primary"
                 />
                 {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-primary text-sm mt-1">
                     {errors.email.message}
                   </p>
                 )}
@@ -161,7 +164,7 @@ const ContactForm = () => {
                 <Input
                   {...register("phone", { required: "Phone is required" })}
                   placeholder="Phone*"
-                  className="h-12 border-gray-300 focus:border-red-500 focus:ring-red-500"
+                  className="h-12 border-gray-300 focus:border-b-primary"
                 />
                 {errors.phone && (
                   <p className="text-red-500 text-sm mt-1">
@@ -175,10 +178,10 @@ const ContactForm = () => {
                     required: "Subject is required",
                   })}
                   placeholder="Subject*"
-                  className="h-12 border-gray-300 focus:border-red-500 focus:ring-red-500"
+                  className="h-12 border-gray-300 focus:border-primary focus:ring-primary"
                 />
                 {errors.subject && (
-                  <p className="text-red-500 text-sm mt-1">
+                  <p className="text-primary text-sm mt-1">
                     {errors.subject.message}
                   </p>
                 )}
@@ -191,10 +194,10 @@ const ContactForm = () => {
                 {...register("message", { required: "Message is required" })}
                 placeholder="Message*"
                 rows={6}
-                className="border-gray-300 focus:border-red-500 focus:ring-red-500 resize-none"
+                className="border-gray-300 focus:border-b-primary resize-none"
               />
               {errors.message && (
-                <p className="text-red-500 text-sm mt-1">
+                <p className="text-primary text-sm mt-1">
                   {errors.message.message}
                 </p>
               )}
@@ -204,7 +207,7 @@ const ContactForm = () => {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 h-auto font-medium"
+              className="bg-primary hover:bg-transparent border border-primary hover:text-primary text-white px-8 py-3 h-auto font-medium cursor-pointer transition-colors duration-300 ease-in-out"
             >
               {isSubmitting ? "Sending..." : "Send Message"}
             </Button>

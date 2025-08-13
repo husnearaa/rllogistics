@@ -82,11 +82,11 @@ export default function Faq() {
           {demoFaqs.data.map((faq) => (
             <div
               key={faq._id}
-              className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm"
+              className="bg-white border border-[#B3ADAD] rounded-lg overflow-hidden shadow-sm"
             >
               {/* Question Row */}
               <div
-                className="flex justify-between items-center p-6 cursor-pointer hover:bg-gray-50 transition-colors"
+                className="flex justify-between items-center px-6 py-2 cursor-pointer bg-[#FFF6F6] hover:bg-gray-50 transition-colors"
                 onClick={() => toggleFaq(faq._id)}
               >
                 <h3 className="text-lg font-medium text-gray-900 pr-4">
@@ -98,7 +98,7 @@ export default function Faq() {
                       <FaMinus size={12} className="text-white" />
                     </div>
                   ) : (
-                    <div className="bg-gray-100 rounded-full p-2 flex items-center justify-center w-8 h-8 hover:bg-gray-200 transition-colors">
+                    <div className="border-[#B3ADAD] border rounded-full p-2 flex items-center justify-center w-8 h-8 hover:bg-gray-200 transition-colors">
                       <FaPlus size={12} className="text-gray-600" />
                     </div>
                   )}

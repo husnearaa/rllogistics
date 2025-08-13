@@ -110,7 +110,9 @@ export default function Navbar() {
                   >
                     <div className="flex items-center space-x-2">
                       {currentLangData?.icon}
-                      <span><Globe className="text-primary" /></span>
+                      <span>
+                        <Globe className="text-primary" />
+                      </span>
                     </div>
                     <FaChevronDown
                       className={`transition-transform ${
@@ -154,13 +156,13 @@ export default function Navbar() {
                   )}
                 </div>
               </div>
-              <Link href="/contact">
+              <Link href="/booking">
                 <button className="bg-transparent border border-primary hover:text-white text-primary hover:bg-primary px-6 py-2 rounded-md flex items-center space-x-2 transition duration-300 ease-in-out">
                   <span>Book Now</span>
                 </button>
               </Link>
             </div>
-            <Link href="/contact">
+            <Link href="/track-order">
               <button className="bg-primary border border-primary text-white hover:text-primary hover:bg-transparent px-6 py-2 rounded-md flex items-center space-x-2 transition duration-300 ease-in-out">
                 <span>Track Order</span>
               </button>
@@ -222,8 +224,8 @@ export default function Navbar() {
 
         {/* Overlay for sidebar */}
         {isSidebarOpen && (
-          <div 
-            className="fixed inset-0 bg-black bg-opacity-50 z-40" 
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-40"
             onClick={toggleSidebar}
           ></div>
         )}

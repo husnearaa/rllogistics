@@ -5,6 +5,7 @@ import Image from "next/image";
 import AirImg from "@/assets/image/air.png";
 import ShipImg from "@/assets/image/ship.png";
 import RoadImg from "@/assets/image/road.png";
+import Link from "next/link";
 
 const transportData = [
   {
@@ -51,9 +52,11 @@ export default function BannerSection() {
                   placeholder="Enter your booking number..."
                   className="flex-1 h-12 border-gray-300 py-3 lg:py-0"
                 />
-                <Button className="bg-red-500 hover:bg-transparent border border-primary hover:border hover:border-primary hover:text-primary text-white px-6 h-12">
-                  Track Order
-                </Button>
+                <Link href="/booking">
+                  <Button className="bg-red-500 hover:bg-transparent border border-primary hover:border hover:border-primary hover:text-primary text-white px-6 h-12">
+                    Track Order
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

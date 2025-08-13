@@ -50,9 +50,9 @@ export default function BannerSection() {
                 <Input
                   type="text"
                   placeholder="Enter your booking number..."
-                  className="flex-1 h-12 border-gray-300 py-3 lg:py-0"
+                  className="flex-1 h-12 border border-gray-300 py-3 lg:py-0 rounded-lg px-4 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent"
                 />
-                <Link href="/booking">
+                <Link href="/track-order">
                   <Button className="bg-red-500 hover:bg-transparent border border-primary hover:border hover:border-primary hover:text-primary text-white px-6 h-12">
                     Track Order
                   </Button>

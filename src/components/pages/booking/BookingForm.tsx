@@ -3,7 +3,6 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
@@ -445,14 +444,14 @@ export default function BookingForm() {
           </div>
 
           {/* Submit Button */}
-          <div className="mt-8 text-center">
+          {/* <div className="mt-8 text-center">
             <Button
               type="submit"
               className="px-8 py-2 bg-blue-600 hover:bg-blue-700"
             >
               Submit Booking
             </Button>
-          </div>
+          </div> */}
 
           {/* Shipment Information Section */}
          <ShipmentInfo />

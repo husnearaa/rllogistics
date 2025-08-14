@@ -4,6 +4,7 @@ import ShipmentForm from "./ShipmentForm";
 import LinkGenerator from "./LinkGenerator";
 
 const ShipmentInfo = () => {
+
   return (
     <div>
       <div className="mt-12">

@@ -13,6 +13,8 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import { BookingConfirmationDialog } from "./BookingConfirmationDialog";
+import { useState } from "react";
 
 interface ShipmentFormData {
   origin: string;
@@ -39,6 +41,14 @@ interface ShipmentFormData {
 }
 
 export default function ShipmentForm() {
+     const [showConfirmation, setShowConfirmation] = useState(false)
+
+  const handleBooking = () => {
+    // Simulate booking process
+    setTimeout(() => {
+      setShowConfirmation(true)
+    }, 500)
+  }
   const {
     register,
     handleSubmit,
@@ -473,10 +483,12 @@ export default function ShipmentForm() {
         <div className="flex justify-center pt-6">
           <Button
             type="submit"
+            onClick={handleBooking}
             className="bg-primary hover:bg-transparent hover:text-primary border hover:border-primary text-white px-8 py-5 transition duration-300 rounded-lg font-medium"
           >
             Confirm Booking
           </Button>
+        <BookingConfirmationDialog open={showConfirmation} onOpenChange={setShowConfirmation} />
         </div>
       </form>
     </div>

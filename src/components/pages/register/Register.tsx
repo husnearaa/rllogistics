@@ -1,20 +1,31 @@
-"use client"
+"use client";
 
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import * as z from "zod"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { toast } from "sonner"
-import { Eye, EyeOff } from "lucide-react"
-import { useState } from "react"
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+// import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { toast } from "sonner";
+import { Eye, EyeOff } from "lucide-react";
+import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 // import RegisterBg from '@/assets/image/Sign up.png';
-
 
 const signUpSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -23,26 +34,26 @@ const signUpSchema = z.object({
   phoneNumber: z.string().min(6, "Phone number must be at least 6 digits"),
   password: z.string().min(8, "Password must be at least 8 characters"),
   rememberMe: z.boolean().optional(),
-})
+});
 
-type SignUpFormData = z.infer<typeof signUpSchema>
+type SignUpFormData = z.infer<typeof signUpSchema>;
 
 const showErrorToast = (message: string) => {
   toast.error(message, {
     duration: 4000,
-  })
-}
+  });
+};
 
 const showSuccessToast = (message: string) => {
   toast.success(message, {
     description: "Account created successfully!",
     duration: 4000,
-  })
-}
+  });
+};
 
 export default function Register() {
-  const [showPassword, setShowPassword] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     register,
@@ -56,85 +67,99 @@ export default function Register() {
       rememberMe: false,
       countryCode: "+880",
     },
-  })
+  });
 
   const onSubmit = async (data: SignUpFormData) => {
-    setIsLoading(true)
+    setIsLoading(true);
 
     try {
       // Log form data to console
-      console.log("Sign Up Form Data:", data)
+      console.log("Sign Up Form Data:", data);
 
       // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      await new Promise((resolve) => setTimeout(resolve, 1500));
 
       // Simulate random success/error for demo
-      const isSuccess = Math.random() > 0.3
+      const isSuccess = Math.random() > 0.3;
 
       if (isSuccess) {
-        showSuccessToast("Welcome aboard!")
-        console.log("✅ Sign up successful!")
+        showSuccessToast("Welcome aboard!");
+        console.log("✅ Sign up successful!");
       } else {
         const errorMessages = [
           "Please check your information and try again",
           "Network connection failed. Please try again",
           "Server is temporarily unavailable",
-        ]
+        ];
 
-        const randomMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)]
-        showErrorToast(randomMessage)
-        console.error(" Sign up failed")
+        const randomMessage =
+          errorMessages[Math.floor(Math.random() * errorMessages.length)];
+        showErrorToast(randomMessage);
+        console.error(" Sign up failed");
       }
     } catch (error) {
-      showErrorToast("An unexpected error occurred")
-      console.error("Unexpected error:", error)
+      showErrorToast("An unexpected error occurred");
+      console.error("Unexpected error:", error);
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   const handleGoogleSignIn = () => {
-    console.log("Google Sign In clicked")
+    console.log("Google Sign In clicked");
     toast.info("Google Sign In", {
       description: "Redirecting to Google...",
-    })
-  }
+    });
+  };
 
   return (
-    <div
-      className="min-h-screen flex items-center justify-center p-4"
-      style={{
-        backgroundImage: "https://i.postimg.cc/LXcLv16h/Sign-up.png",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <Card className="w-full max-w-md bg-white/95 backdrop-blur-sm">
+    // <div
+    //   className="min-h-screen flex items-center justify-center p-4"
+    //   style={{
+    //     backgroundImage: "url('https://i.postimg.cc/LXcLv16h/Sign-up.png')",
+    //     backgroundSize: "cover",
+    //     backgroundPosition: "center",
+    //     backgroundRepeat: "no-repeat",
+    //   }}
+    // >
+    <div className="min-h-screen flex items-center justify-center p-4 bg-[url('https://i.postimg.cc/LXcLv16h/Sign-up.png')] bg-cover bg-center bg-no-repeat">
+      <Card className="w-full max-w-xl bg-white/85 lg:px-10">
         <CardHeader className="text-center pb-4">
-          <CardTitle className="text-2xl font-semibold text-gray-900">Sign Up</CardTitle>
-          <CardDescription className="text-gray-600">Create an account to continue</CardDescription>
+          <CardTitle className="lg:text-2xl text-lg font-semibold text-gray-900">
+            Sign Up
+          </CardTitle>
+          <CardDescription className="text-gray-600">
+            Create an account to continue
+          </CardDescription>
         </CardHeader>
 
         <CardContent className="space-y-4">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             {/* Name Field */}
             <div className="space-y-2">
-              <Label htmlFor="name" className="text-sm font-medium text-gray-700">
+              <Label
+                htmlFor="name"
+                className="text-sm font-medium text-gray-700"
+              >
                 Your Name
               </Label>
               <Input
                 id="name"
                 placeholder="Nafiul"
                 {...register("name")}
-                className="bg-gray-50 border-gray-200 focus:border-red-500 focus:ring-red-500"
+                className=" border-[#969491] focus:border-primary focus:ring-primary shadow-none"
               />
-              {errors.name && <p className="text-sm text-red-600">{errors.name.message}</p>}
+              {errors.name && (
+                <p className="text-sm text-primary">{errors.name.message}</p>
+              )}
             </div>
 
             {/* Email Field */}
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+              <Label
+                htmlFor="email"
+                className="text-sm font-medium text-gray-700"
+              >
                 Your Email
               </Label>
               <Input
@@ -142,18 +167,26 @@ export default function Register() {
                 type="email"
                 placeholder="Enter your email"
                 {...register("email")}
-                className="bg-gray-50 border-gray-200 focus:border-red-500 focus:ring-red-500"
+                className="border-[#969491] focus:border-primary focus:ring-primary shadow-none"
               />
-              {errors.email && <p className="text-sm text-red-600">{errors.email.message}</p>}
+              {errors.email && (
+                <p className="text-sm text-red-600">{errors.email.message}</p>
+              )}
             </div>
 
             {/* Phone Number Field */}
             <div className="space-y-2">
-              <Label htmlFor="phone" className="text-sm font-medium text-gray-700">
+              <Label
+                htmlFor="phone"
+                className="text-sm font-medium text-gray-700"
+              >
                 Phone Number
               </Label>
               <div className="flex gap-2">
-                <Select value={watch("countryCode")} onValueChange={(value) => setValue("countryCode", value)}>
+                <Select
+                  value={watch("countryCode")}
+                  onValueChange={(value) => setValue("countryCode", value)}
+                >
                   <SelectTrigger className="w-24 bg-gray-50 border-gray-200 focus:border-red-500 focus:ring-red-500">
                     <SelectValue />
                   </SelectTrigger>
@@ -168,17 +201,22 @@ export default function Register() {
                   id="phone"
                   placeholder="1902536398"
                   {...register("phoneNumber")}
-                  className="flex-1 bg-gray-50 border-gray-200 focus:border-red-500 focus:ring-red-500"
+                  className="flex-1 border-[#969491] focus:border-primary focus:ring-primary shadow-none"
                 />
               </div>
               {(errors.countryCode || errors.phoneNumber) && (
-                <p className="text-sm text-red-600">{errors.countryCode?.message || errors.phoneNumber?.message}</p>
+                <p className="text-sm text-red-600">
+                  {errors.countryCode?.message || errors.phoneNumber?.message}
+                </p>
               )}
             </div>
 
             {/* Password Field */}
             <div className="space-y-2">
-              <Label htmlFor="password" className="text-sm font-medium text-gray-700">
+              <Label
+                htmlFor="password"
+                className="text-sm font-medium text-gray-700"
+              >
                 Password
               </Label>
               <div className="relative">
@@ -187,7 +225,7 @@ export default function Register() {
                   type={showPassword ? "text" : "password"}
                   placeholder="••••••••••••"
                   {...register("password")}
-                  className="bg-gray-50 border-gray-200 focus:border-red-500 focus:ring-red-500 pr-10"
+                  className="border-[#969491] focus:border-primary focus:ring-primary shadow-none pr-10"
                 />
                 <Button
                   type="button"
@@ -203,32 +241,42 @@ export default function Register() {
                   )}
                 </Button>
               </div>
-              {errors.password && <p className="text-sm text-red-600">{errors.password.message}</p>}
+              {errors.password && (
+                <p className="text-sm text-red-600">
+                  {errors.password.message}
+                </p>
+              )}
             </div>
 
             {/* Remember Me & Forgot Password */}
-            <div className="flex items-center justify-between">
+            {/* <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <Checkbox
                   id="remember"
                   checked={watch("rememberMe")}
-                  onCheckedChange={(checked) => setValue("rememberMe", !!checked)}
+                  onCheckedChange={(checked) =>
+                    setValue("rememberMe", !!checked)
+                  }
                   className="border-gray-300 data-[state=checked]:bg-red-600 data-[state=checked]:border-red-600"
                 />
                 <Label htmlFor="remember" className="text-sm text-gray-600">
                   Remember me
                 </Label>
               </div>
-              <Button type="button" variant="link" className="text-sm text-red-600 hover:text-red-700 p-0 h-auto">
+              <Button
+                type="button"
+                variant="link"
+                className="text-sm text-red-600 hover:text-red-700 p-0 h-auto"
+              >
                 Forgot password
               </Button>
-            </div>
+            </div> */}
 
             {/* Sign Up Button */}
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-2.5"
+              className="w-full bg-primary hover:bg-transparent border border-primary hover:text-primary text-white font-medium py-2.5 mt-4"
             >
               {isLoading ? "Signing Up..." : "Sign Up"}
             </Button>
@@ -238,15 +286,17 @@ export default function Register() {
               type="button"
               variant="outline"
               onClick={handleGoogleSignIn}
-              className="w-full border-gray-300 hover:bg-gray-50 font-medium py-2.5 bg-transparent"
+              className="w-full border-[#969491] hover:bg-gray-50 font-medium py-2.5 bg-transparent shadow-none"
             >
- <FcGoogle />
+              <FcGoogle />
               Sign in with Google
             </Button>
 
             {/* Sign In Link */}
             <div className="text-center">
-              <span className="text-sm text-gray-600">Already have an account? </span>
+              <span className="text-sm text-gray-600">
+                Already have an account?{" "}
+              </span>
               <Button
                 type="button"
                 variant="link"
@@ -259,5 +309,5 @@ export default function Register() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }

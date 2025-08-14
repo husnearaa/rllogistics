@@ -82,7 +82,7 @@ export default function LoginPage() {
 
       {/* Right side - Login Form */}
       <div className="flex-1 flex items-center justify-start">
-        <div className="w-[482px] h-[570px] max-w-xl p-8 bg-white rounded-xl shadow-lg flex flex-col justify-center">
+        <div className="w-[482px] h-[570px] max-w-xl px-8 border border-gray-200 rounded-xl flex flex-col justify-center">
           {/* Logo */}
           <div className="flex items-center justify-center space-x-1">
               <Image

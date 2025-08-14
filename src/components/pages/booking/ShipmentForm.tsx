@@ -473,7 +473,7 @@ export default function ShipmentForm() {
         <div className="flex justify-center pt-6">
           <Button
             type="submit"
-            className="bg-red-500 hover:bg-red-600 text-white px-8 py-2 rounded-md font-medium"
+            className="bg-primary hover:bg-transparent hover:text-primary border hover:border-primary text-white px-8 py-5 transition duration-300 rounded-lg font-medium"
           >
             Confirm Booking
           </Button>

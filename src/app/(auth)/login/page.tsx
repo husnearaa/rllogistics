@@ -65,9 +65,9 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex p-4 md:p-8 bg-gray-50 gap-4 md:gap-[50px]">
-      {/* Left side - Image */}
-      <div className="flex-1 flex items-center justify-end">
-        <div className=" max-w-xl rounded-xl overflow-hidden shadow-lg bg-white">
+      {/* Left side - Image - hidden on small screens, visible on md and up */}
+      <div className="hidden lg:flex flex-1 items-center lg:justify-end justify-center">
+        <div className="max-w-xl rounded-xl overflow-hidden shadow-lg bg-white">
           <Image
             src={LoginImg}
             alt="Airplane on tarmac at sunset"
@@ -81,8 +81,8 @@ export default function LoginPage() {
       </div>
 
       {/* Right side - Login Form */}
-      <div className="flex-1 flex items-center justify-start">
-        <div className="w-[482px] h-[570px] max-w-xl px-8 border border-gray-200 rounded-xl flex flex-col justify-center">
+      <div className="flex-1 flex items-center lg:justify-start justify-center">
+        <div className="w-full md:w-[482px] h-[570px] max-w-xl px-8 border border-gray-200 rounded-xl flex flex-col justify-center">
           {/* Logo */}
           <div className="flex items-center justify-center space-x-1">
               <Image

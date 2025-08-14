@@ -1,6 +1,7 @@
 import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ShipmentForm from "./ShipmentForm";
+import LinkGenerator from "./LinkGenerator";
 
 const ShipmentInfo = () => {
   return (
@@ -32,8 +33,8 @@ const ShipmentInfo = () => {
                 </div>
               </TabsContent>
               <TabsContent value="GenerateLink">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <h1>Generate Link</h1>
+                <div className="text-sm text-gray-600 w-full text-justify lg:text-start">
+                  <LinkGenerator />
                 </div>
               </TabsContent>
             </Tabs>

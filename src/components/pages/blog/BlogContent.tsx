@@ -9,6 +9,7 @@ import Img5 from "@/assets/image/b5.png";
 import { CgArrowLongRight } from "react-icons/cg";
 import { useState } from "react";
 import Pagination from "@/components/shared/CustomPagination";
+import Link from "next/link";
 
 const blogPosts = [
   {
@@ -106,10 +107,12 @@ export default function BlogContent() {
                   {post.excerpt}
                 </p>
 
-                <button className="flex items-center text-gray-900 font-medium text-sm hover:text-primary transition-colors duration-200 group">
-                  Explore More
-                  <CgArrowLongRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-                </button>
+                <Link href={`/blog/${post.id}`}>
+                  <button className="flex items-center text-gray-900 font-medium text-sm hover:text-primary transition-colors duration-200 group">
+                    Explore More
+                    <CgArrowLongRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                  </button>
+                </Link>
               </div>
             </div>
           ))}

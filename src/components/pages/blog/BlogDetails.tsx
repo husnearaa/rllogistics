@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { Calendar, MessageCircle } from "lucide-react";
 import { PageHeader } from "@/components/shared/PageHeader";
+import BgImg from '@/assets/image/b1.png';
 
-export default function BlogPage() {
+export default function BlogDetails() {
   return (
     <div className="min-h-screen bg-white">
       <PageHeader
@@ -11,10 +12,10 @@ export default function BlogPage() {
       />
       <main className="container mx-auto py-8 px-4">
         {/* Hero Image */}
-        <div className="w-full max-w-6xl mx-auto px-4 mb-8">
+        <div className="container mx-auto px-4 mb-8">
           <div className="relative w-full h-80 rounded-lg overflow-hidden">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-IqKaLJfkyxJ0TMayPLntff6BTGiK0g.png"
+              src={BgImg}
               alt="Container shipping port with colorful containers and yellow cranes"
               fill
               className="object-cover"
@@ -23,7 +24,7 @@ export default function BlogPage() {
         </div>
 
         {/* Blog Content */}
-        <div className="max-w-4xl mx-auto px-4 pb-16">
+        <div className=" px-4 pb-16">
           {/* Meta Information */}
           <div className="flex items-center gap-6 mb-6 text-sm text-gray-600">
             <div className="flex items-center gap-2">

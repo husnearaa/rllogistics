@@ -202,7 +202,7 @@ export default function LoginPage() {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full h-12 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-lg transition-colors"
+              className="w-full h-12  bg-primary hover:bg-transparent border border-primary hover:text-primary text-white font-semibold rounded-lg transition-colors"
             >
               {isLoading ? "Logging in..." : "Log in"}
             </Button>
@@ -212,7 +212,7 @@ export default function LoginPage() {
               type="button"
               variant="outline"
               onClick={handleGoogleSignIn}
-              className="w-full h-12 border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition-colors flex items-center justify-center space-x-3 bg-white rounded-lg"
+              className="w-full h-12 border border-gray-300 text-gray-700 font-medium hover:bg-gray-300 transition-colors flex items-center justify-center space-x-3 bg-white rounded-lg"
             >
               <FcGoogle />
               <span>Sign in with google</span>

@@ -1,4 +1,11 @@
-import { Phone, MapPin, MessageSquare, User, CircleUserRound } from "lucide-react";
+import {
+  Phone,
+  MapPin,
+  MessageSquare,
+  User,
+  CircleUserRound,
+} from "lucide-react";
+import Link from "next/link";
 // import Image from "next/image";
 // import UserImg from "@/assets/user.png";
 
@@ -12,7 +19,9 @@ const SubHeader = () => {
               {/* Left section - Phone */}
               <div className="flex items-center gap-2 text-base">
                 <Phone className="lg:w-6 lg:h-6 w-5 h-5 text-red-500 hover:scale-110 duration-300" />
-                <span className="text-base whitespace-nowrap">+86 130 9375 6351</span>
+                <span className="text-base whitespace-nowrap">
+                  +86 130 9375 6351
+                </span>
               </div>
 
               {/* Center section - Location */}
@@ -34,19 +43,15 @@ const SubHeader = () => {
             {/* User Profile */}
             <div className="flex items-center gap-3">
               <div>
-                <div className="flex items-center gap-1 border border-primary text-primary hover:bg-primary hover:border hover:border-primary hover:text-white px-2 py-1 rounded-lg translation duration-300 cursor-pointer">
-                  {/* <div className="">
-                    <Image
-                      src={UserImg}
-                      alt="user"
-                      width={500}
-                      height={500}
-                      className="w-[22px] h-[22px]"
-                    />
-                  </div> */}
-                  <User />
-                  <span className="hidden sm:inline text-base">User Login</span>
-                </div>
+                <Link href="/login">
+                  {" "}
+                  <div className="flex items-center gap-1 border border-primary text-primary hover:bg-primary hover:border hover:border-primary hover:text-white px-2 py-1 rounded-lg translation duration-300 cursor-pointer">
+                    <User />
+                    <span className="hidden sm:inline text-base">
+                      User Login
+                    </span>
+                  </div>
+                </Link>
               </div>
               <div>
                 <div className="flex items-center gap-2 bg-warning text-primary border border-warning hover:border hover:bg-primary hover:border-primary hover:text-white px-2 py-1 rounded-lg cursor-pointer">
@@ -59,7 +64,7 @@ const SubHeader = () => {
                       className="w-[22px] h-[22px]"
                     />
                   </div> */}
-                  <CircleUserRound  />
+                  <CircleUserRound />
                   <span className="hidden sm:inline text-base">
                     Admin Login
                   </span>

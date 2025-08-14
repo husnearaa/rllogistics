@@ -10,8 +10,9 @@ import { Eye, EyeOff } from "lucide-react";
 import { toast } from "sonner";
 import Image from "next/image";
 import { FcGoogle } from "react-icons/fc";
-import LoginImg from '@/assets/image/login.png';
+import LoginImg from "@/assets/image/login.png";
 import logo from "@/assets/logo.png";
+import Link from "next/link";
 
 interface LoginFormData {
   email: string;
@@ -52,7 +53,9 @@ export default function LoginPage() {
         toast.error("Invalid email or password. Please try again.");
       }
     } catch (error) {
-      toast.error((error as Error).message || "Something went wrong. Please try again.");
+      toast.error(
+        (error as Error).message || "Something went wrong. Please try again."
+      );
     } finally {
       setIsLoading(false);
     }
@@ -85,13 +88,13 @@ export default function LoginPage() {
         <div className="w-full md:w-[482px] h-[570px] max-w-xl px-8 border border-gray-200 rounded-xl flex flex-col justify-center">
           {/* Logo */}
           <div className="flex items-center justify-center space-x-1">
-              <Image
-                src={logo}
-                alt="rllogistics"
-                width={500}
-                height={500}
-                className="w-[194px] h-[36px]"
-              />
+            <Image
+              src={logo}
+              alt="rllogistics"
+              width={500}
+              height={500}
+              className="w-[194px] h-[36px]"
+            />
           </div>
 
           {/* Welcome text */}
@@ -216,15 +219,11 @@ export default function LoginPage() {
             </Button>
 
             {/* Sign up link */}
-            <p className="text-center text-sm text-gray-600">
-              Don&apos;t have an account?{" "}
-              <button
-                type="button"
-                className="text-black font-semibold hover:underline"
-                onClick={() => toast.info("Sign up clicked")}
-              >
+            <p className="text-center text-sm text-gray-600 pr-2">
+              Don&apos;t have an account?
+              <Link href="/register" className="pl-2 text-black font-semibold hover:underline">
                 Sign up
-              </button>
+              </Link>
             </p>
           </form>
         </div>

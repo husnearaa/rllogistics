@@ -25,6 +25,7 @@ import { toast } from "sonner";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
+import Link from "next/link";
 // import RegisterBg from '@/assets/image/Sign up.png';
 
 const signUpSchema = z.object({
@@ -297,13 +298,15 @@ export default function Register() {
               <span className="text-sm text-gray-600">
                 Already have an account?{" "}
               </span>
-              <Button
-                type="button"
-                variant="link"
-                className="text-sm text-red-600 hover:text-red-700 p-0 h-auto font-medium"
-              >
-                Sign in
-              </Button>
+              <Link href="/login">
+                <Button
+                  type="button"
+                  variant="link"
+                  className="text-sm text-red-600 hover:text-red-700 p-0 h-auto font-medium"
+                >
+                  Sign in
+                </Button>
+              </Link>
             </div>
           </form>
         </CardContent>

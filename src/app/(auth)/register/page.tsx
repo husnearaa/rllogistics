@@ -1,7 +1,11 @@
-export default function RegisterPage() {
+import Register from "@/components/pages/register/Register";
+
+const page = () => {
   return (
     <div>
-      <h1>Register</h1>
+      <Register />
     </div>
   );
-}
+};
+
+export default page;

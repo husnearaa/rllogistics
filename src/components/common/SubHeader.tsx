@@ -2,12 +2,12 @@ import {
   Phone,
   MapPin,
   MessageSquare,
-  User,
-  CircleUserRound,
+  // User,
+  // CircleUserRound,
 } from "lucide-react";
-import Link from "next/link";
-// import Image from "next/image";
-// import UserImg from "@/assets/user.png";
+// import Link from "next/link";
+import Image from "next/image";
+import UserImg from "@/assets/user.png";
 
 const SubHeader = () => {
   return (
@@ -42,7 +42,7 @@ const SubHeader = () => {
 
             {/* User Profile */}
             <div className="flex items-center gap-3">
-              <div>
+              {/* <div>
                 <Link href="/login">
                   {" "}
                   <div className="flex items-center gap-1 border border-primary text-primary hover:bg-primary hover:border hover:border-primary hover:text-white px-2 py-1 rounded-lg translation duration-300 cursor-pointer">
@@ -52,10 +52,10 @@ const SubHeader = () => {
                     </span>
                   </div>
                 </Link>
-              </div>
+              </div> */}
               <div>
-                <div className="flex items-center gap-2 bg-warning text-primary border border-warning hover:border hover:bg-primary hover:border-primary hover:text-white px-2 py-1 rounded-lg cursor-pointer">
-                  {/* <div className="">
+                <div className="flex items-center gap-2 bg-warning text-primary border border-warning hover:border hover:bg-primary hover:border-primary hover:text-white px-3 py-1 rounded-lg cursor-pointer">
+                  <div className="">
                     <Image
                       src={UserImg}
                       alt="user"
@@ -63,10 +63,10 @@ const SubHeader = () => {
                       height={500}
                       className="w-[22px] h-[22px]"
                     />
-                  </div> */}
-                  <CircleUserRound />
+                  </div>
+                  {/* <CircleUserRound /> */}
                   <span className="hidden sm:inline text-base">
-                    Admin Login
+                  Login
                   </span>
                 </div>
               </div>

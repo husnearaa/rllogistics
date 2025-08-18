@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo1 from "@/assets/logo1.png";
-import { FaXTwitter, FaYoutube } from "react-icons/fa6";
+import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { IoLogoWechat } from "react-icons/io5";
 
 export default function Footer() {
@@ -55,7 +55,7 @@ export default function Footer() {
                     className="text-white hover:text-primary transition-colors"
                   >
                     <div>
-                      <span className="text-4xl"><FaYoutube /></span>
+                      <span className="text-4xl"><FaLinkedin /></span>
                     </div>
                   </Link>
                 </div>

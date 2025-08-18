@@ -4,6 +4,7 @@ import Image from "next/image";
 import PlaneImg from "@/assets/icons/plane.png";
 import TrainImg from "@/assets/icons/train.png";
 import TruckImg from "@/assets/icons/truck.png";
+import MeetOutTeam from "@/components/pages/about/MeetOurTeam";
 
 const features = [
   {
@@ -74,6 +75,8 @@ const AboutUs = () => {
             ))}
           </div>
         </div>
+
+        <MeetOutTeam />
       </main>
     </div>
   );

@@ -157,13 +157,13 @@ export default function Navbar() {
                 </div>
               </div>
               <Link href="/booking">
-                <button className="bg-transparent border border-primary hover:text-white text-primary hover:bg-primary px-6 py-2 rounded-md flex items-center space-x-2 transition duration-300 ease-in-out">
+                <button className="bg-transparent border border-primary hover:text-white text-primary hover:bg-primary px-6 py-3 rounded-md flex items-center space-x-2 transition duration-300 ease-in-out">
                   <span>Book Now</span>
                 </button>
               </Link>
             </div>
             <Link href="/track-order">
-              <button className="bg-primary border border-primary text-white hover:text-primary hover:bg-transparent px-6 py-2 rounded-md flex items-center space-x-2 transition duration-300 ease-in-out">
+              <button className="bg-primary border border-primary text-white hover:text-primary hover:bg-transparent px-6 py-3 rounded-md flex items-center space-x-2 transition duration-300 ease-in-out">
                 <span>Track Order</span>
               </button>
             </Link>

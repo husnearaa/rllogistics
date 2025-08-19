@@ -9,6 +9,7 @@ import TransportCategorySection from "@/components/home/TransportCategorySection
 import TutorialSection from "@/components/home/TutorialSection";
 import WorkProcessSection from "@/components/home/WorkProcessSection";
 
+
 const HomePage = () => {
   return (
     <div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "sonner";
+import * as sonner from "sonner";
 import NextAuthSessionProvider from "@/lib/NextAuthSessionProvider";
 import ReduxProvider from "@/redux/ReduxProvider";
 
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${outfit.className} antialiased`}>
-        <Toaster position="bottom-right" richColors />
+        <sonner.Toaster position="bottom-right" richColors />
         <NextAuthSessionProvider>
           <ReduxProvider>{children}</ReduxProvider>
         </NextAuthSessionProvider>

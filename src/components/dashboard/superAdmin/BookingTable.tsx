@@ -2,7 +2,7 @@
 
 import CustomPagination2 from "@/components/shared/CustomPagination2";
 import { Edit } from "lucide-react";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 // Demo booking data matching the image
 const bookingData = [
@@ -126,11 +126,142 @@ const bookingData = [
     status: "Pending",
     contactNumber: "+8801330000121",
   },
+  {
+    sl: 11,
+    bookingId: "CN241110",
+    containerId: "-",
+    bookingDate: "20-11-2024",
+    senderCountry: "China",
+    receiverCountry: "India",
+    deliveryDate: "25-11-2024",
+    productLocation: "Bangladesh warehouse",
+    status: "Pending",
+    contactNumber: "+8801330000121",
+  },
+  {
+    sl: 12,
+    bookingId: "CN241111",
+    containerId: "-",
+    bookingDate: "21-11-2024",
+    senderCountry: "China",
+    receiverCountry: "India",
+    deliveryDate: "25-11-2024",
+    productLocation: "Bangladesh warehouse",
+    status: "Pending",
+    contactNumber: "+8801330000121",
+  },
+  {
+    sl: 13,
+    bookingId: "CN241112",
+    containerId: "-",
+    bookingDate: "22-11-2024",
+    senderCountry: "China",
+    receiverCountry: "India",
+    deliveryDate: "25-11-2024",
+    productLocation: "Bangladesh warehouse",
+    status: "Pending",
+    contactNumber: "+8801330000121",
+  },
+  {
+    sl: 14,
+    bookingId: "CN241113",
+    containerId: "-",
+    bookingDate: "23-11-2024",
+    senderCountry: "China",
+    receiverCountry: "India",
+    deliveryDate: "25-11-2024",
+    productLocation: "Bangladesh warehouse",
+    status: "Pending",
+    contactNumber: "+8801330000121",
+  },
+  {
+    sl: 15,
+    bookingId: "CN241114",
+    containerId: "-",
+    bookingDate: "24-11-2024",
+    senderCountry: "China",
+    receiverCountry: "India",
+    deliveryDate: "25-11-2024",
+    productLocation: "Bangladesh warehouse",
+    status: "Pending",
+    contactNumber: "+8801330000121",
+  },
+  {
+    sl: 16,
+    bookingId: "CN241115",
+    containerId: "-",
+    bookingDate: "25-11-2024",
+    senderCountry: "China",
+    receiverCountry: "India",
+    deliveryDate: "25-11-2024",
+    productLocation: "Bangladesh warehouse",
+    status: "Pending",
+    contactNumber: "+8801330000121",
+  },
+  {
+    sl: 17,
+    bookingId: "CN241116",
+    containerId: "-",
+    bookingDate: "26-11-2024",
+    senderCountry: "China",
+    receiverCountry: "India",
+    deliveryDate: "25-11-2024",
+    productLocation: "Bangladesh warehouse",
+    status: "Pending",
+    contactNumber: "+8801330000121",
+  },
+  {
+    sl: 18,
+    bookingId: "CN241117",
+    containerId: "-",
+    bookingDate: "27-11-2024",
+    senderCountry: "China",
+    receiverCountry: "India",
+    deliveryDate: "25-11-2024",
+    productLocation: "Bangladesh warehouse",
+    status: "Pending",
+    contactNumber: "+8801330000121",
+  },
+  {
+    sl: 19,
+    bookingId: "CN241118",
+    containerId: "-",
+    bookingDate: "28-11-2024",
+    senderCountry: "China",
+    receiverCountry: "India",
+    deliveryDate: "25-11-2024",
+    productLocation: "Bangladesh warehouse",
+    status: "Pending",
+    contactNumber: "+8801330000121",
+  },
+  {
+    sl: 20,
+    bookingId: "CN241119",
+    containerId: "-",
+    bookingDate: "29-11-2024",
+    senderCountry: "China",
+    receiverCountry: "India",
+    deliveryDate: "25-11-2024",
+    productLocation: "Bangladesh warehouse",
+    status: "Pending",
+    contactNumber: "+8801330000121",
+  },
 ];
 
 export default function BookingTable() {
-  const [currentPage, setCurrentPage] = useState(2); // Set to page 2 to match the image
-  const totalPages = 3;
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+
+  // Calculate total pages based on data length
+  const totalPages = Math.ceil(bookingData.length / itemsPerPage);
+
+  // Get current page data
+  const currentData = useMemo(() => {
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    return bookingData.slice(startIndex, endIndex);
+  }, [currentPage]);
+
   return (
     <div className="p-6">
       <div className="overflow-hidden">
@@ -177,9 +308,9 @@ export default function BookingTable() {
               <tr className="h-8">
                 <td colSpan={12} className="border-b border-red-500"></td>
               </tr>
-              {bookingData.map((booking) => (
+              {currentData.map((booking) => (
                 <tr
-                  key={booking.bookingId}
+                  key={`${booking.bookingId}-${booking.sl}`}
                   className="hover:bg-gray-50 border-b border-red-500"
                 >
                   <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
@@ -226,11 +357,13 @@ export default function BookingTable() {
         </div>
 
         {/* pagination  */}
-        <CustomPagination2
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={setCurrentPage}
-        />
+        <div className="mt-6">
+          <CustomPagination2
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
+          />
+        </div>
       </div>
     </div>
   );

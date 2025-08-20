@@ -266,6 +266,7 @@ export default function BookingTable() {
     <div className="p-6">
       <div className="overflow-hidden">
         <div className="overflow-x-auto">
+          <div className=" border border-gray-400 mb-5 max-w-6xl"></div>
           <table className="min-w-full">
             <thead className="bg-red-500 text-white">
               <tr>

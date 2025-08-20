@@ -9,71 +9,159 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 import {
-  HandCoins,
-  Home,
-  InfoIcon,
-  LayoutDashboard,
   User,
-  Users,
 } from "lucide-react";
+import { FaChartColumn } from "react-icons/fa6";
 import Image from "next/image";
 import { NavMain } from "./nav-main";
 import { NavUser } from "./nav-user";
 import Link from "next/link";
 
 const data = {
-  user: {
+  super_admin: {
     navMain: [
       {
         title: "Dashboard",
-        url: "/user",
-        icon: LayoutDashboard,
+        url: "/dashboard/superAdmin",
+        icon: FaChartColumn,
       },
       {
-        title: "Your Profile",
-        url: "/user/dashboard/profile",
+        title: "Booking",
+        url: "/dashboard/superAdmin/booking",
         icon: User,
       },
       {
-        title: "Go Back To Home",
-        url: "/",
-        icon: Home,
+        title: "Container",
+        url: "/dashboard/superAdmin/container",
+        icon: User,
       },
+      {
+        title: "All Orders",
+        url: "/dashboard/superAdmin/order",
+        icon: User,
+      },
+      {
+        title: "For Delivery",
+        url: "/dashboard/superAdmin/delivery",
+        icon: User,
+      },
+      {
+        title: "Report",
+        url: "/dashboard/superAdmin/report",
+        icon: User,
+      },
+      {
+        title: "Message",
+        url: "/dashboard/superAdmin/message",
+        icon: User,
+      },
+      {
+        title: "Notification",
+        url: "/dashboard/superAdmin/notification",
+        icon: User,
+      },
+      {
+        title: "Customer",
+        url: "/dashboard/superAdmin/customer",
+        icon: User,
+      },
+      {
+        title: "Add Employee",
+        url: "/dashboard/superAdmin/employee",
+        icon: User,
+      },
+      {
+        title: "Setting",
+        url: "/dashboard/superAdmin/setting",
+        icon: User,
+      },
+      // {
+      //   title: "Go Back To Home",
+      //   url: "/",
+      //   icon: Home,
+      // },
     ],
   },
   admin: {
     navMain: [
-      {
+       {
         title: "Dashboard",
-        url: "/admin/dashboard",
-        icon: LayoutDashboard,
+        url: "/dashboard/admin",
+        icon: FaChartColumn,
       },
       {
-        title: "Users",
-        url: "/user/dashboard/users",
-        icon: HandCoins,
-        items: [
-          {
-            title: "Users",
-            url: "/user/dashboard/estimates",
-            icon: Users,
-          },
-          {
-            title: "Pending Users",
-            url: "/user/dashboard/pending-users",
-            icon: InfoIcon,
-          },
-        ],
-      },
-      {
-        title: "Your Profile",
-        url: "/user/dashboard/profile",
+        title: "Booking",
+        url: "/dashboard/admin/booking",
         icon: User,
       },
       {
-        title: "Go Back To Home",
-        url: "/",
-        icon: Home,
+        title: "Container",
+        url: "/dashboard/admin/container",
+        icon: User,
+      },
+      {
+        title: "All Orders",
+        url: "/dashboard/admin/order",
+        icon: User,
+      },
+      {
+        title: "For Delivery",
+        url: "/dashboard/admin/delivery",
+        icon: User,
+      },
+      {
+        title: "Message",
+        url: "/dashboard/admin/message",
+        icon: User,
+      },
+      {
+        title: "Notification",
+        url: "/dashboard/admin/notification",
+        icon: User,
+      },
+      {
+        title: "Customer",
+        url: "/dashboard/admin/customer",
+        icon: User,
+      },
+    ],
+  },
+  manager: {
+    navMain: [
+      {
+        title: "Dashboard",
+        url: "/dashboard/manager",
+        icon: FaChartColumn,
+      },
+      {
+        title: "Booking",
+        url: "/dashboard/manager/booking",
+        icon: User,
+      },
+      {
+        title: "Container",
+        url: "/dashboard/manager/container",
+        icon: User,
+      },
+      {
+        title: "All Orders",
+        url: "/dashboard/manager/order",
+        icon: User,
+      },
+      {
+        title: "For Delivery",
+        url: "/dashboard/manager/delivery",
+        icon: User,
+      },
+      {
+        title: "Message",
+        url: "/dashboard/manager/message",
+        icon: User,
+      },
+      {
+        title: "Notification",
+        url: "/dashboard/manager/notification",
+        icon: User,
       },
     ],
   },

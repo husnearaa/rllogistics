@@ -17,6 +17,7 @@ import {
 import { ChevronRight, type LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { IconType } from "react-icons";
 
 export function NavMain({
   items,
@@ -24,7 +25,7 @@ export function NavMain({
   items: {
     title: string;
     url: string;
-    icon?: LucideIcon;
+    icon?: LucideIcon | IconType;
     isActive?: boolean;
     items?: {
       title: string;

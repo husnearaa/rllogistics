@@ -60,7 +60,7 @@ export function NavMain({
                           : ""
                       }`}
                     >
-                      {item.icon && <item.icon className="mr-2 h-5 w-5" />}
+                      {item.icon && <item.icon className="mr-2  h-7 w-7 font-bold" />}
                       <span>{item.title}</span>
                       <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                     </SidebarMenuButton>
@@ -72,11 +72,11 @@ export function NavMain({
                           <SidebarMenuSubButton asChild>
                             <Link href={subItem.url}>
                               {subItem.icon && (
-                                <subItem.icon className="mr-2 h-5 w-5" />
+                                <subItem.icon className="mr-2  h-7 w-7 font-bold" />
                               )}
                               <span
                                 className={`${
-                                  pathname === subItem.url ? "text-primary" : ""
+                                  pathname === subItem.url ? "text-primary" : "text-primary"
                                 }`}
                               >
                                 {subItem.title}
@@ -100,12 +100,12 @@ export function NavMain({
                 tooltip={item.title}
                 className={`${
                   isActive
-                    ? "bg-primary text-white hover:bg-primary/90 hover:text-white"
-                    : ""
-                }`}
+                    ? "bg-[#FCDFE1] text-primary font-bold hover:bg-primary/90 hover:text-white"
+                    : "text-Black hover:bg-primary hover:text-white"
+                } py-6`}
               >
                 <Link href={item.url}>
-                  {item.icon && <item.icon className="mr-2 h-5 w-5" />}
+                  {item.icon && <item.icon className="mr-2 h-7 w-7 font-bold" />}
                   <span>{item.title}</span>
                 </Link>
               </SidebarMenuButton>

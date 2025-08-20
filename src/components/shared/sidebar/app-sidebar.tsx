@@ -9,6 +9,8 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 import {
+  Plane,
+  Settings2,
   User,
 } from "lucide-react";
 import { FaChartColumn } from "react-icons/fa6";
@@ -28,12 +30,12 @@ const data = {
       {
         title: "Booking",
         url: "/dashboard/superAdmin/booking",
-        icon: User,
+        icon: Plane,
       },
       {
         title: "Container",
         url: "/dashboard/superAdmin/container",
-        icon: User,
+        icon: Settings2,
       },
       {
         title: "All Orders",

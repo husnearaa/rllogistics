@@ -136,17 +136,17 @@ export default function BookingTable() {
           <table className="min-w-full">
             <thead className="bg-red-500 text-white">
               <tr>
-                <th className="px-4 py-4 text-left text-sm font-medium">Sl.</th>
-                <th className="px-4 py-4 text-left text-sm font-medium">Booking Id</th>
-                <th className="px-4 py-4 text-left text-sm font-medium">Container Id</th>
-                <th className="px-4 py-4 text-left text-sm font-medium">Booking Date</th>
-                <th className="px-4 py-4 text-left text-sm font-medium">Sender Country</th>
-                <th className="px-4 py-4 text-left text-sm font-medium">Receiver Country</th>
-                <th className="px-4 py-4 text-left text-sm font-medium">Delivery Date</th>
-                <th className="px-4 py-4 text-left text-sm font-medium">Product Location</th>
-                <th className="px-4 py-4 text-left text-sm font-medium">Status</th>
-                <th className="px-4 py-4 text-left text-sm font-medium">Sender Contact Number</th>
-                <th className="px-4 py-4 text-left text-sm font-medium">Action</th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Sl.</th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Booking Id</th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Container Id</th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Booking Date</th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Sender Country</th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Receiver Country</th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Delivery Date</th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Product Location</th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Status</th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Sender Contact Number</th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Action</th>
               </tr>
             </thead>
             <tbody className="">
@@ -164,7 +164,7 @@ export default function BookingTable() {
                   <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">{booking.deliveryDate}</td>
                   <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">{booking.productLocation}</td>
                   <td className="px-4 py-4 whitespace-nowrap text-sm">
-                    <span className="bg-yellow-100 text-yellow-900 px-3 py-1 rounded-full text-xs font-medium">
+                    <span className="bg-yellow-100 text-black px-3 py-1 rounded-full text-xs font-medium">
                       {booking.status}
                     </span>
                   </td>

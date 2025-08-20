@@ -100,8 +100,8 @@ export function NavMain({
                 tooltip={item.title}
                 className={`${
                   isActive
-                    ? "bg-[#FCDFE1] text-primary font-bold hover:bg-primary/90 hover:text-white"
-                    : "text-Black hover:bg-primary hover:text-white"
+                    ? "bg-[#FCDFE1] text-primary font-bold hover:bg-primary hover:text-white transition-colors duration-300 ease-linear"
+                    : "text-Black hover:bg-primary hover:text-white transition-colors duration-300 ease-linear"
                 } py-6`}
               >
                 <Link href={item.url}>

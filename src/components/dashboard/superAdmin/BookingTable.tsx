@@ -1,6 +1,8 @@
-"use client"
+"use client";
 
-import { Edit } from "lucide-react"
+import CustomPagination2 from "@/components/shared/CustomPagination2";
+import { Edit } from "lucide-react";
+import { useState } from "react";
 
 // Demo booking data matching the image
 const bookingData = [
@@ -124,11 +126,11 @@ const bookingData = [
     status: "Pending",
     contactNumber: "+8801330000121",
   },
-]
+];
 
 export default function BookingTable() {
-
-
+  const [currentPage, setCurrentPage] = useState(2); // Set to page 2 to match the image
+  const totalPages = 3;
   return (
     <div className="p-6">
       <div className="overflow-hidden">
@@ -136,17 +138,39 @@ export default function BookingTable() {
           <table className="min-w-full">
             <thead className="bg-red-500 text-white">
               <tr>
-                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Sl.</th>
-                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Booking Id</th>
-                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Container Id</th>
-                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Booking Date</th>
-                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Sender Country</th>
-                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Receiver Country</th>
-                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Delivery Date</th>
-                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Product Location</th>
-                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Status</th>
-                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Sender Contact Number</th>
-                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">Action</th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">
+                  Sl.
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">
+                  Booking Id
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">
+                  Container Id
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">
+                  Booking Date
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">
+                  Sender Country
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">
+                  Receiver Country
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">
+                  Delivery Date
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">
+                  Product Location
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">
+                  Status
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">
+                  Sender Contact Number
+                </th>
+                <th className="px-4 py-4 text-left text-sm font-medium whitespace-nowrap">
+                  Action
+                </th>
               </tr>
             </thead>
             <tbody className="">
@@ -154,21 +178,42 @@ export default function BookingTable() {
                 <td colSpan={12} className="border-b border-red-500"></td>
               </tr>
               {bookingData.map((booking) => (
-                <tr key={booking.bookingId} className="hover:bg-gray-50 border-b border-red-500">
-                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">{booking.sl}.</td>
-                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900 font-medium">{booking.bookingId}</td>
-                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">{booking.containerId}</td>
-                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">{booking.bookingDate}</td>
-                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">{booking.senderCountry}</td>
-                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">{booking.receiverCountry}</td>
-                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">{booking.deliveryDate}</td>
-                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">{booking.productLocation}</td>
+                <tr
+                  key={booking.bookingId}
+                  className="hover:bg-gray-50 border-b border-red-500"
+                >
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                    {booking.sl}.
+                  </td>
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900 font-medium">
+                    {booking.bookingId}
+                  </td>
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                    {booking.containerId}
+                  </td>
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                    {booking.bookingDate}
+                  </td>
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                    {booking.senderCountry}
+                  </td>
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                    {booking.receiverCountry}
+                  </td>
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                    {booking.deliveryDate}
+                  </td>
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                    {booking.productLocation}
+                  </td>
                   <td className="px-4 py-4 whitespace-nowrap text-sm">
                     <span className="bg-yellow-100 text-black px-3 py-1 rounded-full text-xs font-medium">
                       {booking.status}
                     </span>
                   </td>
-                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">{booking.contactNumber}</td>
+                  <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
+                    {booking.contactNumber}
+                  </td>
                   <td className="px-4 py-4 whitespace-nowrap text-sm">
                     <button className="text-red-500 hover:text-red-700 p-1">
                       <Edit size={16} />
@@ -179,7 +224,14 @@ export default function BookingTable() {
             </tbody>
           </table>
         </div>
+
+        {/* pagination  */}
+        <CustomPagination2
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
       </div>
     </div>
-  )
+  );
 }

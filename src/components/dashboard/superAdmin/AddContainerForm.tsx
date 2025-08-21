@@ -22,9 +22,16 @@ export function AddContainerForm() {
     register,
     handleSubmit,
     setValue,
+    watch,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<ContainerFormData>()
+  } = useForm<ContainerFormData>({
+    defaultValues: {
+      model: "",
+      mediumOfTransportation: "",
+      location: "",
+    }
+  })
 
   const onSubmit = async (data: ContainerFormData) => {
     try {
@@ -48,6 +55,11 @@ export function AddContainerForm() {
       toast.error("Failed to add container. Please try again.")
     }
   }
+
+  // Watch the select values to ensure they're registered
+  const modelValue = watch("model")
+  const transportValue = watch("mediumOfTransportation")
+  const locationValue = watch("location")
 
   return (
     <div className="p-6">
@@ -74,7 +86,10 @@ export function AddContainerForm() {
             <Label htmlFor="model" className="text-sm font-medium text-gray-700">
               Model
             </Label>
-            <Select onValueChange={(value) => setValue("model", value)}>
+            <Select 
+              value={modelValue} 
+              onValueChange={(value) => setValue("model", value)}
+            >
               <SelectTrigger className="border-b-2 border-gray-300 shadow-none text-gray-900 w-full">
                 <SelectValue placeholder="Select Here" />
               </SelectTrigger>
@@ -85,6 +100,7 @@ export function AddContainerForm() {
                 <SelectItem value="flat-rack">Flat Rack Container</SelectItem>
               </SelectContent>
             </Select>
+            {errors.model && <p className="text-sm text-red-600">{errors.model.message}</p>}
           </div>
 
           {/* Ports Available */}
@@ -118,7 +134,10 @@ export function AddContainerForm() {
             <Label htmlFor="mediumOfTransportation" className="text-sm font-medium text-gray-700">
               Medium of transportation
             </Label>
-            <Select onValueChange={(value) => setValue("mediumOfTransportation", value)}>
+            <Select 
+              value={transportValue} 
+              onValueChange={(value) => setValue("mediumOfTransportation", value)}
+            >
               <SelectTrigger className="border-b-2 border-gray-300 shadow-none text-gray-900 w-full">
                 <SelectValue placeholder="Select Here" />
               </SelectTrigger>
@@ -136,7 +155,10 @@ export function AddContainerForm() {
             <Label htmlFor="location" className="text-sm font-medium text-gray-700">
               Location
             </Label>
-            <Select onValueChange={(value) => setValue("location", value)}>
+            <Select 
+              value={locationValue} 
+              onValueChange={(value) => setValue("location", value)}
+            >
               <SelectTrigger className="border-b-2 border-gray-300 shadow-none text-gray-900 w-full">
                 <SelectValue placeholder="Select Here" />
               </SelectTrigger>

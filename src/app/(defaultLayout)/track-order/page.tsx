@@ -1,4 +1,4 @@
-import TrackOrder from "@/components/pages/TrackOrder/TrackOrder";
+import TrackOrder from "@/components/mainLayout/TrackOrder/TrackOrder";
 import React from "react";
 
 const page = () => {

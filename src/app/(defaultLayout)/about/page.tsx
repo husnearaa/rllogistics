@@ -4,7 +4,7 @@ import Image from "next/image";
 import PlaneImg from "@/assets/icons/plane.png";
 import TrainImg from "@/assets/icons/train.png";
 import TruckImg from "@/assets/icons/truck.png";
-import MeetOutTeam from "@/components/pages/about/MeetOurTeam";
+import MeetOutTeam from "@/components/mainLayout/about/MeetOurTeam";
 
 const features = [
   {
@@ -29,7 +29,6 @@ const features = [
       "Transmax the world's driving more as worldwide coordinations supplier we exchange the any as more redy worldwide",
   },
 ];
-
 
 const AboutUs = () => {
   return (

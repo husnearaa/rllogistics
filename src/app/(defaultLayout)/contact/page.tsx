@@ -2,8 +2,8 @@
 
 import { PageHeader } from "@/components/shared/PageHeader";
 import React from "react";
-import Faq from "@/components/pages/contact/Faq";
-import ContactForm from "@/components/pages/contact/ContactForm";
+import Faq from "@/components/mainLayout/contact/Faq";
+import ContactForm from "@/components/mainLayout/contact/ContactForm";
 
 const Contact = () => {
   return (

@@ -1,12 +1,12 @@
-import BookingForm from '@/components/pages/booking/BookingForm';
-import React from 'react';
+import BookingForm from "@/components/mainLayout/booking/BookingForm";
+import React from "react";
 
 const page = () => {
-    return (
-        <div>
-           <BookingForm /> 
-        </div>
-    );
+  return (
+    <div>
+      <BookingForm />
+    </div>
+  );
 };
 
 export default page;

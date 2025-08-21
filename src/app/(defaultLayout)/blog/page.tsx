@@ -1,4 +1,4 @@
-import BlogContent from "@/components/pages/blog/BlogContent";
+import BlogContent from "@/components/mainLayout/blog/BlogContent";
 import { PageHeader } from "@/components/shared/PageHeader";
 
 const Blog = () => {

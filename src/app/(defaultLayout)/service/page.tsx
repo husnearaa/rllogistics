@@ -1,5 +1,5 @@
 import WorkProcessSection from "@/components/home/WorkProcessSection";
-import TransportationServices from "@/components/pages/service/TransportationServices";
+import TransportationServices from "@/components/mainLayout/service/TransportationServices";
 import { PageHeader } from "@/components/shared/PageHeader";
 import React from "react";
 

@@ -76,7 +76,7 @@ export function NavMain({
                               )}
                               <span
                                 className={`${
-                                  pathname === subItem.url ? "text-primary" : "text-primary"
+                                  pathname === subItem.url ? "text-primary" : "text-black"
                                 }`}
                               >
                                 {subItem.title}

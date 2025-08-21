@@ -3,7 +3,6 @@ import AppSidebar from "@/components/shared/sidebar/app-sidebar";
 import {
   SidebarInset,
   SidebarProvider,
-  SidebarTrigger,
 } from "@/components/ui/sidebar";
 // import { useDecodedToken } from "@/hooks/useDecodedToken";
 // import { useAppSelector } from "@/redux/hooks";
@@ -28,7 +27,7 @@ export default function DashboardLayout({
       <SidebarInset>
         <header className="flex h-20 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-18 bg-[#f0f0f0]">
           <div className="flex items-center gap-2 px-4 w-full">
-            <SidebarTrigger className="-ml-1" />
+            {/* <SidebarTrigger className="-ml-1" /> */}
             <div className="flex justify-between items-center w-full px-6">
               <div className="text-left w-3/4">
                 {/* <h1 className="font-semibold text-primary lg:text-2xl text-lg">

@@ -50,10 +50,10 @@ export function AddContainerForm() {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-      <h1 className="text-xl font-medium text-gray-900 mb-6 border-b border-gray-200 pb-4">Add Container</h1>
+    <div className="p-6">
+      <h1 className="text-xl font-medium text-gray-900 mb-6 border-b border-gray-300 pb-4 max-w-[1172px]">Add Container</h1>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Container ID */}
           <div className="space-y-2">
@@ -63,7 +63,7 @@ export function AddContainerForm() {
             <Input
               id="containerId"
               placeholder="Enter id..."
-              className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-400"
+              className=" border-gray-300 text-gray-900 placeholder:text-gray-400 shadow-none"
               {...register("containerId", { required: "Container ID is required" })}
             />
             {errors.containerId && <p className="text-sm text-red-600">{errors.containerId.message}</p>}
@@ -75,7 +75,7 @@ export function AddContainerForm() {
               Model
             </Label>
             <Select onValueChange={(value) => setValue("model", value)}>
-              <SelectTrigger className="bg-white border-gray-300 text-gray-900">
+              <SelectTrigger className="border-b-2 border-gray-300 shadow-none text-gray-900 w-full">
                 <SelectValue placeholder="Select Here" />
               </SelectTrigger>
               <SelectContent>
@@ -95,7 +95,7 @@ export function AddContainerForm() {
             <Input
               id="portsAvailable"
               placeholder="Type here..."
-              className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-400"
+              className=" border-gray-300 text-gray-900 placeholder:text-gray-400 shadow-none"
               {...register("portsAvailable")}
             />
           </div>
@@ -108,7 +108,7 @@ export function AddContainerForm() {
             <Input
               id="status"
               placeholder="Type here..."
-              className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-400"
+              className=" border-gray-300 text-gray-900 placeholder:text-gray-400 shadow-none"
               {...register("status")}
             />
           </div>
@@ -119,7 +119,7 @@ export function AddContainerForm() {
               Medium of transportation
             </Label>
             <Select onValueChange={(value) => setValue("mediumOfTransportation", value)}>
-              <SelectTrigger className="bg-white border-gray-300 text-gray-900">
+              <SelectTrigger className="border-b-2 border-gray-300 shadow-none text-gray-900 w-full">
                 <SelectValue placeholder="Select Here" />
               </SelectTrigger>
               <SelectContent>
@@ -137,7 +137,7 @@ export function AddContainerForm() {
               Location
             </Label>
             <Select onValueChange={(value) => setValue("location", value)}>
-              <SelectTrigger className="bg-white border-gray-300 text-gray-900">
+              <SelectTrigger className="border-b-2 border-gray-300 shadow-none text-gray-900 w-full">
                 <SelectValue placeholder="Select Here" />
               </SelectTrigger>
               <SelectContent>
@@ -158,7 +158,7 @@ export function AddContainerForm() {
           <Input
             id="productsInside"
             placeholder="Type here..."
-            className="bg-white border-gray-300 text-gray-900 placeholder:text-gray-400"
+            className=" border-gray-300 text-gray-900 placeholder:text-gray-400 shadow-none"
             {...register("productsInside")}
           />
         </div>

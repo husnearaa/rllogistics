@@ -29,7 +29,7 @@ export function NavMain({
     isActive?: boolean;
     items?: {
       title: string;
-      icon?: LucideIcon;
+       icon?: LucideIcon | IconType;
       url: string;
     }[];
   }[];

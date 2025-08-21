@@ -8,18 +8,17 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import {
-  CirclePlus,
-  Plane,
-  Settings2,
-  User,
-} from "lucide-react";
+import { CirclePlus, Plane, Settings2, User } from "lucide-react";
 import { RiBarChartHorizontalLine } from "react-icons/ri";
 import { FaChartColumn } from "react-icons/fa6";
 import Image from "next/image";
 import { NavMain } from "./nav-main";
 import { NavUser } from "./nav-user";
 import Link from "next/link";
+
+
+const containerBaseUrl = "/dashboard/superAdmin/container";
+
 
 const data = {
   super_admin: {
@@ -39,19 +38,19 @@ const data = {
       //   url: "/dashboard/superAdmin/container",
       //   icon: Settings2,
       // },
-    {
+      {
         title: "Container",
-        url: "/dashboard/superAdmin/container",
-         icon: Settings2,
+        url: containerBaseUrl,
+        icon: Settings2,
         items: [
           {
             title: "Add Container",
-             url: "/dashboard/superAdmin/add-container",
+            url: `${containerBaseUrl}/add-container`,
             icon: CirclePlus,
           },
           {
             title: "All Container",
-                url: "/dashboard/superAdmin/all-container",
+              url: `${containerBaseUrl}/all-container`,
             icon: RiBarChartHorizontalLine,
           },
         ],
@@ -105,7 +104,7 @@ const data = {
   },
   admin: {
     navMain: [
-       {
+      {
         title: "Dashboard",
         url: "/dashboard/admin",
         icon: FaChartColumn,

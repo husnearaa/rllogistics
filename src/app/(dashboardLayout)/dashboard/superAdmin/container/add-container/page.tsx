@@ -1,9 +1,10 @@
+import { AddContainerForm } from '@/components/dashboard/superAdmin/AddContainerForm';
 import React from 'react';
 
 const page = () => {
     return (
         <div>
-            <h1>Add Container</h1>
+            <AddContainerForm />
         </div>
     );
 };

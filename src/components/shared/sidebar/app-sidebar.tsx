@@ -57,7 +57,7 @@ const data = {
       },
       {
         title: "All Orders",
-        url: "/dashboard/superAdmin/order",
+        url: "/dashboard/superAdmin/orders",
         icon: User,
       },
       {

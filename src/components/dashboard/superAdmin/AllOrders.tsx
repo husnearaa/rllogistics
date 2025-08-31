@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import CustomPagination2 from "@/components/shared/CustomPagination2";
+import Link from "next/link";
 
 // Sample data matching the image structure
 const containerData = [
@@ -283,7 +284,7 @@ export default function AllOrders() {
               currentData.map((item) => (
                 <tr
                   key={`${item.bookingId}-${item.sl}`}
-                 className="hover:bg-gray-50 border-b border-red-500"
+                  className="hover:bg-gray-50 border-b border-red-500"
                 >
                   <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
                     {item.sl}.
@@ -316,11 +317,11 @@ export default function AllOrders() {
                     {item.receiverContactNumber}
                   </td>
                   <td className="px-4 py-3 text-sm">
-                    <Button
-                      className="bg-primary border hover:border border-primary hover:bg-transparent hover:text-primary text-white text-xs px-5 py-1"
-                    >
-                      Details
-                    </Button>
+                    <Link href={`/dashboard/superAdmin/order-info`}>
+                      <Button className="bg-primary border hover:border border-primary hover:bg-transparent hover:text-primary text-white text-xs px-5 py-1">
+                        Details
+                      </Button>
+                    </Link>
                   </td>
                 </tr>
               ))

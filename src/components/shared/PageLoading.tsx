@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
-import loadingAnimation from "@/components/lottieAnimations/loading-animation.json";
+import loadingAnimation from "@/components/lottieAnimations/loading-animation.json.json";
 
 export default function PageLoading() {
   const [loadingText, setLoadingText] = useState("Loading");
